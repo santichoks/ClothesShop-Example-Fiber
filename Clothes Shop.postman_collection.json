@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "07af6986-e368-4efa-b44e-5a764863de72",
+		"name": "Clothes Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24530248"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/products",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "Men",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "Women",
+							"disabled": true
+						},
+						{
+							"key": "style",
+							"value": "Batman",
+							"disabled": true
+						},
+						{
+							"key": "style",
+							"value": "Spiderman",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "L",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "XL",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/orders?start_date=2022-11-22&end_date=2022-11-26",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"orders"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "placed_order",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "completed",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "start_date",
+							"value": "2022-11-22"
+						},
+						{
+							"key": "end_date",
+							"value": "2022-11-26"
+						},
+						{
+							"key": "limit",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_details\": {\r\n        \"product_id\":[1, 3, 5],\r\n        \"gender\":[\"Women\", \"Women\", \"Women\"],\r\n        \"style\":[\"Red\", \"Red\", \"Red\"],\r\n        \"size\":[\"XS\", \"XS\", \"XS\"],\r\n        \"price\":[199, 199, 199],\r\n        \"quantity\":[2, 4, 6]\r\n    },\r\n    \"address\":\"940 Lat Krabang\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/orders",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

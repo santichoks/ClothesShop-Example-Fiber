@@ -1,5 +1,41 @@
-# ClothesShop-Example-Practice
+# ClothesShop-Practice-Fiber
 <h3 align="center">🚨🚨🚨 this document is in progress 🚨🚨🚨</h3>
+<details><summary><h3>Getting started</h3></summary>
+<p>
+<ul>
+<li>
+ 
+<strong>Install</strong>
+ 
+```
+$ git clone https://github.com/santichoks/ClothesShop-Practice-Fiber.git
+$ cd ClothesShop-Practice-Fiber
+$ go get -u
+```
+</li>
+ 
+<li>
+ 
+<strong>Setting up your local environment</strong>
+ 
+create an `.env` file in the application root directory.
+ 
+```
+FIBER_HOST=localhost
+FIBER_PORT=3000
+DB_HOST=localhost
+DB_PORT=1150
+DB_DATABASE=clothes_shop
+DB_USERNAME=postgres
+DB_PASSWORD=123456
+DB_SSL_MODE=disable
+```
+</li>
+ 
+</ul>
+</p>
+</details>
+
 <details><summary><h3>API Endpoints</h3></summary>
 <p>
 <ul>

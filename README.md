@@ -6,44 +6,49 @@
 <li>
 
 <p><strong>Get Products</strong></p>
- 
-Get all products `http://localhost:3000/products`
- 
+
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|-|-|
-|`/products`|GET|`gender [Men, Women]`|`http://localhost:8000/products?gender=Women`|
-||||`http://localhost:8000/products?gender=Men,Women`|
-|||`size [XS, S, M, L, XL]`|`http://localhost:8000/products?size=M`|
-||||`http://localhost:8000/products?size=XS,S,M`|
-|||`style [Red, Black, Batman, Spiderman]`|`http://localhost:8000/products?style=Red`|
-||||`http://localhost:8000/products?style=Red,Spiderman,Batman`|
+|`/products`|GET|`gender [Men, Women]`|`http://localhost:3000/products?gender=Men`|
+||||`http://localhost:3000/products?gender=Men&gender=Women`|
+|||`size [XS, S, M, L, XL]`|`http://localhost:3000/products?size=L`|
+||||`http://localhost:3000/products?size=L&size=XL`|
+|||`style [Red, Black, Batman, Spiderman]`|`http://localhost:3000/products?style=Batman`|
+||||`http://localhost:3000/products?style=Batman&style=Spiderman`|
 
-<strong>Example :</strong> `http://localhost:8000/products?gender=Women&size=XS,S,M`
+<strong>Example :</strong> `http://localhost:3000/products?gender=Men&style=Batman&style=Spiderman&size=L&size=XL`
 
 ```
-{
-    "status": "successfully.",
-    "total": 9,
-    "results": [
-        {
-            "product_id": 6,
-            "gender": "Women",
-            "style": "Plain color / Black",
-            "size": "XS",
-            "price": 290
-        },
-        {
-            "product_id": 7,
-            "gender": "Women",
-            "style": "Plain color / Black",
-            "size": "S",
-            "price": 290
-        },
-        ...
-        ...
-        ...
-    ]
-}
+[
+    {
+        "product_id": 14,
+        "gender": "Men",
+        "style": "Batman",
+        "size": "L",
+        "price": 430
+    },
+    {
+        "product_id": 15,
+        "gender": "Men",
+        "style": "Batman",
+        "size": "XL",
+        "price": 450
+    },
+    {
+        "product_id": 24,
+        "gender": "Men",
+        "style": "Spiderman",
+        "size": "L",
+        "price": 430
+    },
+    {
+        "product_id": 25,
+        "gender": "Men",
+        "style": "Spiderman",
+        "size": "XL",
+        "price": 450
+    }
+]
 ```
 
 </li>
@@ -54,38 +59,20 @@ Get all products `http://localhost:3000/products`
 
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|-|-|
-|`/orders`|GET|`start_date [YYYY-MM-DD]`|`http://localhost:8000/orders?start_date=2022-10-10&end_date=2022-10-14`|
-|||`end_date [YYYY-MM-DD]`|`http://localhost:8000/orders?start_date=2022-10-10&end_date=2022-10-14`|
-|||`status [placed_order, paid, shipping_out, completed]`|`http://localhost:8000/orders?status=paid`|
-||||`http://localhost:8000/orders?status=paid,completed`|
+|||||
+|||||
+|||||
+|||||
 
-<strong>Example :</strong> `http://localhost:8000/orders?start_date=2022-10-10&end_date=2022-10-14&status=paid,completed`
+<strong>Example :</strong> `#################################################################`
  
 ```
-{
-    "status": "successfully.",
-    "results": [
-        {
-            "order_id": 4,
-            "product_id": 4,
-            "status": "completed",
-            "order_date": "2022-10-05T12:38:13.000Z",
-            "paid_date": "2022-10-14T13:08:28.000Z",
-            "address": "178/25 Soi Vuthipun Ratchaprarob Road Phayathai Bangkok 10400"
-        },
-        {
-            "order_id": 7,
-            "product_id": 7,
-            "status": "completed",
-            "order_date": "2022-10-11T12:38:13.000Z",
-            "paid_date": "2022-10-14T13:08:28.000Z",
-            "address": "178/25 Soi Vuthipun Ratchaprarob Road Phayathai Bangkok 10400"
-        },
-        ...
-        ...
-        ...
-    ]
-}
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
+
 ```
 </li>
 
@@ -95,22 +82,43 @@ Get all products `http://localhost:3000/products`
 
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|:-:|-|
-|`orders`|POST|-|`http://localhost:8000/orders`|
+|`orders`|POST|-|`http://localhost:3000/orders`|
 
-<strong>JSON Body format</strong>
+<p><strong>JSON Body format</strong></p>
 
 ```
 {
-    "product_id": string,
-    "address": string"
+    "product_details": {
+        "product_id":[6],
+        "gender":["Women"],
+        "style":["Black"],
+        "size":["XS"],
+        "price":[290],
+        "quantity":[1]
+    },
+    "address":"12/9 Phaholyothin Sukhumvit Bangkok 10900"
+}
+```
+<strong>Note :</strong> The same index of the array represents the same product detail.
+```
+{
+    "product_details": {
+        "product_id":[1, 2, 3],
+        "gender":["Men", "Men", "Men"],
+        "style":["Red", "Red", "Red"],
+        "size":["XS", "S", "M"],
+        "price":[400, 400, 420],
+        "quantity":[1, 3, 5]
+    },
+    "address":"12/9 Phaholyothin Sukhumvit Bangkok 10900"
 }
 ```
 
-<strong>Example :</strong> `http://127.0.0.1:8000/orders`
+<strong>Example :</strong> `http://127.0.0.1:3000/orders`
  
 ```
 {
-    "status": "order created successfully."
+    "status": "order has been created"
 }
 ```
 </li>

@@ -1,5 +1,4 @@
 # ClothesShop-Practice-Fiber
-<h3 align="center">🚨🚨🚨 This document is in progress 80% 🚨🚨🚨</h3>
 <h3>Introduction</h3>
 <ul>
 This project is created for practice and learning about Go and Fiber.

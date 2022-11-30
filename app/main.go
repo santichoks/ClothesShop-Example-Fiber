@@ -189,8 +189,10 @@ func getProducts(queryParams *QueryParams) ([]Products, error) {
 
 func getOrders(queryParams *QueryParams) ([]Orders, error) {
 	query := "SELECT * FROM orders WHERE "
-	query += fmt.Sprintf("( paid_date BETWEEN '%s' AND '%s'::DATE + INTERVAL '1' DAY ) ", queryParams.StartDate, queryParams.EndDate)
-	query += "AND " + filter(queryParams.Status, "status")
+	query += filter(queryParams.Status, "status")
+	if queryParams.StartDate != "" && queryParams.EndDate != "" {
+		query += fmt.Sprintf("AND ( paid_date BETWEEN '%s' AND '%s'::DATE + INTERVAL '1' DAY ) ", queryParams.StartDate, queryParams.EndDate)
+	}
 	query += pagination(queryParams.Limit, queryParams.Page)
 
 	fmt.Println(query)

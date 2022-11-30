@@ -97,10 +97,10 @@ DB_SSL_MODE=disable
 
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|-|-|
-|||||
-|||||
-|||||
-|||||
+|`/orders`|GET|`start_date [yyyy-mm-dd]`|`http://localhost:3000/orders?start_date=2022-11-16&end_date=2022-11-30`|
+|||`end_date [yyyy-mm-dd]`|`http://localhost:3000/orders?start_date=2022-11-16&end_date=2022-11-30`|
+|||`status [placed_order, paid, shipping_out, completed]`|`http://localhost:3000/orders?status=shipping_out`|
+||||`http://localhost:3000/orders?status=shipping_out&status=completed`|
 |||`limit [amounts_per_page]`|`http://localhost:3000/orders?limit=5`|
 |||`page [page_number]`|`http://localhost:3000/orders?page=1`|
 

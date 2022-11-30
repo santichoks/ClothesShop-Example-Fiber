@@ -1,5 +1,5 @@
 # ClothesShop-Practice-Fiber
-<h3 align="center">🚨🚨🚨 this document is in progress 🚨🚨🚨</h3>
+<h3 align="center">🚨🚨🚨 This document is in progress 70% 🚨🚨🚨</h3>
 <details><summary><h3>Getting started</h3></summary>
 <p>
 <ul>

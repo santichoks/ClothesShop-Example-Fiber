@@ -51,6 +51,8 @@ DB_SSL_MODE=disable
 ||||`http://localhost:3000/products?size=L&size=XL`|
 |||`style [Red, Black, Batman, Spiderman]`|`http://localhost:3000/products?style=Batman`|
 ||||`http://localhost:3000/products?style=Batman&style=Spiderman`|
+|||`limit [amounts_per_page]`|`http://localhost:3000/products?limit=5`|
+|||`page [page_number]`|`http://localhost:3000/products?page=1`|
 
 <strong>Example :</strong> `http://localhost:3000/products?gender=Men&style=Batman&style=Spiderman&size=L&size=XL`
 
@@ -99,6 +101,8 @@ DB_SSL_MODE=disable
 |||||
 |||||
 |||||
+|||`limit [amounts_per_page]`|`http://localhost:3000/orders?limit=5`|
+|||`page [page_number]`|`http://localhost:3000/orders?page=1`|
 
 <strong>Example :</strong> `http://localhost:3000/orders?start_date=2022-11-16&end_date=2022-11-30&status=shipping_out&status=completed`
  

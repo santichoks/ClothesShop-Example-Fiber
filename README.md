@@ -1,5 +1,11 @@
 # ClothesShop-Practice-Fiber
 <h3 align="center">🚨🚨🚨 This document is in progress 70% 🚨🚨🚨</h3>
+
+<h3>Database schema</h3>
+
+<p align="center">
+<img src="./resource/db_schema.jpg">
+<p>
 <details><summary><h3>Getting started</h3></summary>
 <p>
 <ul>

@@ -2,11 +2,9 @@
 <h3 align="center">🚨🚨🚨 This document is in progress 70% 🚨🚨🚨</h3>
 <h3>Introduction</h3>
 
-<h3>Database schema</h3>
-
-<p align="center">
+<h3>Database schema</h3> 
 <img src="./resource/db_schema.png">
-<p>
+ 
 <details><summary><h3>Getting started</h3></summary>
 <p>
 <ul>

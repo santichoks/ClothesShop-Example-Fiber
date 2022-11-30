@@ -1,9 +1,6 @@
 # ClothesShop-Practice-Fiber
 <h3 align="center">🚨🚨🚨 This document is in progress 70% 🚨🚨🚨</h3>
 <h3>Introduction</h3>
-
-<h3>Database schema</h3> 
-<img src="./resource/db_schema.png">
  
 <details><summary><h3>Getting started</h3></summary>
 <p>
@@ -39,6 +36,10 @@ DB_SSL_MODE=disable
  
 </ul>
 </p>
+</details>
+
+<details><summary><h3>Database schema</h3></summary> 
+<img src="./resource/db_schema.png">
 </details>
 
 <details><summary><h3>API Endpoints</h3></summary>

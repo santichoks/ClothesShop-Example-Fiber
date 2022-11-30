@@ -8,10 +8,12 @@ This project is created for practice and learning about Go and Fiber.
 <details><summary><h3>Getting started</h3></summary>
 <p>
 <ul>
+
+You can import a database from ./resource/database.sql into your PostgreSQL and Postman Collections from `./resource/Clothes Shop.postman_collection.json` It might be useful for you. But if your device does not already have PostgreSQL, you can follow the instructions at the bottom to install it using Docker.
 <li>
  
 <strong>Install</strong>
- 
+
 ```
 $ git clone https://github.com/santichoks/ClothesShop-Practice-Fiber.git
 $ cd ClothesShop-Practice-Fiber

@@ -5,7 +5,7 @@
 <h3>Database schema</h3>
 
 <p align="center">
-<img src="./resource/db_schema.jpg">
+<img src="./resource/db_schema.png">
 <p>
 <details><summary><h3>Getting started</h3></summary>
 <p>

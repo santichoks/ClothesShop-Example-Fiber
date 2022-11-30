@@ -118,7 +118,7 @@ DB_SSL_MODE=disable
 
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|:-:|-|
-|`orders`|POST|-|`http://localhost:3000/orders`|
+|`/orders`|POST|-|`http://localhost:3000/orders`|
 
 <p><strong>JSON Body format</strong></p>
 

@@ -28,12 +28,12 @@ create an `.env` file in the application root directory.
  
 ```
 FIBER_HOST=localhost
-FIBER_PORT=3000
+FIBER_PORT=<fiber_port>
 DB_HOST=localhost
-DB_PORT=1150
-DB_DATABASE=clothes_shop
-DB_USERNAME=postgres
-DB_PASSWORD=123456
+DB_PORT=<database_port>
+DB_DATABASE=<database_name>
+DB_USERNAME=<database_username>
+DB_PASSWORD=<database_password>
 DB_SSL_MODE=disable
 ```
 </li>
@@ -55,16 +55,16 @@ DB_SSL_MODE=disable
 
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|-|-|
-|`/products`|GET|`gender [Men, Women]`|`http://localhost:3000/products?gender=Men`|
-||||`http://localhost:3000/products?gender=Men&gender=Women`|
-|||`size [XS, S, M, L, XL]`|`http://localhost:3000/products?size=L`|
-||||`http://localhost:3000/products?size=L&size=XL`|
-|||`style [Red, Black, Batman, Spiderman]`|`http://localhost:3000/products?style=Batman`|
-||||`http://localhost:3000/products?style=Batman&style=Spiderman`|
-|||`limit [amounts_per_page]`|`http://localhost:3000/products?limit=5`|
-|||`page [page_number]`|`http://localhost:3000/products?page=1`|
+|`/products`|GET|`gender [Men, Women]`|`http://localhost:<fiber_port>/products?gender=Men`|
+||||`http://localhost:<fiber_port>/products?gender=Men&gender=Women`|
+|||`size [XS, S, M, L, XL]`|`http://localhost:<fiber_port>/products?size=L`|
+||||`http://localhost:<fiber_port>/products?size=L&size=XL`|
+|||`style [Red, Black, Batman, Spiderman]`|`http://localhost:<fiber_port>/products?style=Batman`|
+||||`http://localhost:<fiber_port>/products?style=Batman&style=Spiderman`|
+|||`limit [amounts_per_page]`|`http://localhost:<fiber_port>/products?limit=5`|
+|||`page [page_number]`|`http://localhost:<fiber_port>/products?page=1`|
 
-<strong>Example :</strong> `http://localhost:3000/products?gender=Men&style=Batman&style=Spiderman&size=L&size=XL`
+<strong>Example :</strong> `http://localhost:<fiber_port>/products?gender=Men&style=Batman&style=Spiderman&size=L&size=XL`
 
 ```
 [
@@ -107,14 +107,14 @@ DB_SSL_MODE=disable
 
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|-|-|
-|`/orders`|GET|`start_date [yyyy-mm-dd]`|`http://localhost:3000/orders?start_date=2022-11-16&end_date=2022-11-30`|
-|||`end_date [yyyy-mm-dd]`|`http://localhost:3000/orders?start_date=2022-11-16&end_date=2022-11-30`|
-|||`status [placed_order, paid, shipping_out, completed]`|`http://localhost:3000/orders?status=shipping_out`|
-||||`http://localhost:3000/orders?status=shipping_out&status=completed`|
-|||`limit [amounts_per_page]`|`http://localhost:3000/orders?limit=5`|
-|||`page [page_number]`|`http://localhost:3000/orders?page=1`|
+|`/orders`|GET|`start_date [yyyy-mm-dd]`|`http://localhost:<fiber_port>/orders?start_date=2022-11-16&end_date=2022-11-30`|
+|||`end_date [yyyy-mm-dd]`|`http://localhost:<fiber_port>/orders?start_date=2022-11-16&end_date=2022-11-30`|
+|||`status [placed_order, paid, shipping_out, completed]`|`http://localhost:<fiber_port>/orders?status=shipping_out`|
+||||`http://localhost:<fiber_port>/orders?status=shipping_out&status=completed`|
+|||`limit [amounts_per_page]`|`http://localhost:<fiber_port>/orders?limit=5`|
+|||`page [page_number]`|`http://localhost:<fiber_port>/orders?page=1`|
 
-<strong>Example :</strong> `http://localhost:3000/orders?start_date=2022-11-16&end_date=2022-11-30&status=shipping_out&status=completed`
+<strong>Example :</strong> `http://localhost:<fiber_port>/orders?start_date=2022-11-16&end_date=2022-11-30&status=shipping_out&status=completed`
  
 ```
 [
@@ -156,7 +156,7 @@ DB_SSL_MODE=disable
 
 |Endpoint|Method|Optional Params|Example|
 |:-:|:-:|:-:|-|
-|`/orders`|POST|-|`http://localhost:3000/orders`|
+|`/orders`|POST|-|`http://localhost:<fiber_port>/orders`|
 
 <p><strong>JSON Body format</strong></p>
 
@@ -188,7 +188,7 @@ DB_SSL_MODE=disable
 }
 ```
 
-<strong>Example :</strong> `http://127.0.0.1:3000/orders`
+<strong>Example :</strong> `http://localhost:<fiber_port>/orders`
  
 ```
 {
@@ -218,7 +218,7 @@ $ docker pull postgres:alpine
 <strong>Run the container</strong>
 
 ```
-$ docker run --name PostgreSQL -e POSTGRES_PASSWORD=123456 -p 1150:5432 -d postgres:alpine
+$ docker run --name PostgreSQL -e POSTGRES_USER=<database_username> -e POSTGRES_PASSWORD=<database_password> -p <database_port>:5432 -d postgres:alpine
 ```
 </li>
  
@@ -235,7 +235,7 @@ $ psql -U postgres
 ```
 
 ```
-$ CREATE DATABASE clothes_shop;
+$ CREATE DATABASE <database_name>;
 ```
 </li>
  
